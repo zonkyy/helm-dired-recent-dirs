@@ -62,7 +62,8 @@ zstyle \":chpwd:*\" recent-dirs-max %d"
 
 (defun helm-dired-recent-dirs-view ()
   (interactive)
-  (let ((helm-execute-action-at-once-if-one t)
+  (let ((shell-file-name (executable-find "zsh"))
+        (helm-execute-action-at-once-if-one t)
         (helm-quit-if-no-candidate
          (lambda () (message "No recent dirs.")))
         (buf (get-buffer-create "*helm guideline*")))
