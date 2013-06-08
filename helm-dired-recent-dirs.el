@@ -3,6 +3,8 @@
 ;; Copyright (C) 2013  akisute3 <akisute3@gmail.com>
 
 ;; Author: Akisute <akisute3@gmail.com>
+;; Version: 0.1
+;; Package-Requires: ((helm "1.0"))
 ;; Keywords: helm, dired, zsh
 
 ;; This program is free software; you can redistribute it and/or modify
