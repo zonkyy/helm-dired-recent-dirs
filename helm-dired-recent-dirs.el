@@ -61,7 +61,7 @@ zstyle \":chpwd:*\" recent-dirs-max %d"
     (candidates-in-buffer)
     (action . (("Go" . (lambda (candidate) (dired candidate)))))))
 
-
+;;;###autoload
 (defun helm-dired-recent-dirs-view ()
   (interactive)
   (let ((shell-file-name (executable-find "zsh"))
