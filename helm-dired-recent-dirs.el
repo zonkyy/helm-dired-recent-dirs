@@ -54,7 +54,7 @@ zstyle \":chpwd:*\" recent-dirs-max %d"
   '((name . "Dired History:")
     (init .  (lambda ()
                (call-process-shell-command
-                (format "%s && cdr -l | sed 's/[0-9]*\\s*//'"
+                (format "%s && cdr -l | sed 's/[0-9]*[[:space:]]*//'"
                         (helm-dired-recent-dirs-init-script))
                 nil
                 (helm-candidate-buffer 'global))))
