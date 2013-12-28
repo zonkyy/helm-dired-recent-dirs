@@ -50,6 +50,10 @@ zstyle \":chpwd:*\" recent-dirs-max %d"
 (add-hook 'dired-after-readin-hook 'helm-dired-recent-dirs-cd)
 
 
+(defun helm-dired-internal (dir)
+  (dired dir))
+
+
 (defvar helm-source-dired-recent-dirs
   '((name . "Dired History:")
     (init .  (lambda ()
@@ -59,7 +63,7 @@ zstyle \":chpwd:*\" recent-dirs-max %d"
                 nil
                 (helm-candidate-buffer 'global))))
     (candidates-in-buffer)
-    (action . (("Go" . (lambda (candidate) (dired candidate)))))))
+    (action . (("Go" . (lambda (candidate) (helm-dired-internal candidate)))))))
 
 ;;;###autoload
 (defun helm-dired-recent-dirs-view ()
